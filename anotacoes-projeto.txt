@@ -1,0 +1,58 @@
+# dot notation
+O objeto pode acessar uma propriedade apenas por um ponto, ao invés de declarar uma variável.
+
+- objeto
+  var bio = {};
+
+- setando nova propriedade no objeto existente
+  bio.propriedadeNovaCriada = "banana"
+
+- anexando informacão no DOM
+$("#main").append(work.currentJob);
+
+
+## brackets notation
+
+O objeto pode acessar uma propriedade através de colchetes
+
+- objeto
+  var education = {};
+
+- setando nova propriedade no objeto existente
+  education["propriedadeNovaCriada"] = "Udacity";
+
+- anexando informacão no DOM
+$("#main").append(education["nameOfScholl"]);
+
+
+if (bio.skills.length > 0) {
+    $("#header").append(HTMLskillsStart);
+    var skillsFormatadas = bio.skills.forEach(function(item, index, array) {
+        HTMLskills.replace("%data%", bio.skills);
+    });
+    $("#skills").append(skillsFormatadas);
+}
+
+### Loop
+
+- tipos de array : https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
+- loop usado para objetos ou arrays. Se usado num objeto que tem um array dentro, é importante indicar o index do array, senão ele se perde
+
+job é igual ao index
+
+for (job in work.jobs) {
+    $("#workExperience").append(HTMLworkStart);
+    var empregadorFormadato = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+    var tituloEmpregoFormadato = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+    var empregadorTituloFormatado = empregadorFormadato + tituloEmpregoFormadato;
+    var dataEmpregoFormadato = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+    var LocalEmpregoFormadato = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+    var DescricaoEmpregoFormadato = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+
+    $(".work-entry:last").append(empregadorTituloFormatado).append(dataEmpregoFormadato).append(LocalEmpregoFormadato).append(DescricaoEmpregoFormadato);
+}
+
+
+#### Escopo de função
+
+- mais detalhes em : https://toddmotto.com/everything-you-wanted-to-know-about-javascript-scope/
