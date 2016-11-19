@@ -161,22 +161,24 @@ education.display = function(){
           });
       }
 
-      // if(education.onlineCourses.length > 0){
-          // education.onlineCourses.forEach(function(onlineCourse){
-          //   $("#education").append(HTMLschoolStart).append(HTMLonlineClasses);
-          //   var onlineTitle = HTMLonlineTitle.replace("%data%",onlineCourse.name);
-          //   var onlineSchool = HTMLonlineSchool.replace("%data%",onlineCourse.school);
-          //   var onlineDates = HTMLonlineDates.replace("%data%",onlineCourse.dates);
-          //   var onlineURL = HTMLonlineURL.replace("%data%",onlineCourse.url);
-          //
-          //
-          //   $(".education-entry:last").append(onlineTitle).append(onlineSchool).append(onlineDates).append(onlineURL);
-          //
-          //
-          // })
-      // }
-
   });
+
+
+  if(education.onlineCourses.length > 0){
+      education.onlineCourses.forEach(function(onlineCourse){
+        $("#education").append(HTMLschoolStart);
+        var onlineTitle = HTMLonlineTitle.replace("%data%",onlineCourse.name);
+        var onlineSchool = HTMLonlineSchool.replace("%data%",onlineCourse.school);
+        var onlineDates = HTMLonlineDates.replace("%data%",onlineCourse.dates);
+        var onlineURL = HTMLonlineURL.replace("%data%",onlineCourse.url);
+
+        // $("#education").append(HTMLonlineClasses);
+
+        $(".education-entry:last").append(HTMLonlineClasses).append(onlineTitle).append(onlineSchool).append(onlineDates).append(onlineURL);
+
+
+      })
+  }
 };
 
 education.display();
