@@ -2,12 +2,54 @@
 This is empty on purpose! Your code to build the resume will go here.
  */
 
+var bio = {
+    "name": "Aline Vianna",
+    "role": "Web Developer",
+    "contacts": {
+        "generic": "ACDC",
+        "email": "acdc@gmail.com",
+        "mobile": "0999-0999",
+        "twitter": "aghi-la",
+        "github": "aghi-la",
+        "blog": "http://wwww.google.com",
+        "location": "Nashville, TN"
+    },
+    "welcomeMessage": "Hello, how are you? I'm Aline Vianna, nice to meet you.",
+    "skills": ["css", "html", "javascript"],
+    "biopic": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/3/000/100/358/19e5526.jpg"
+};
+
+var education = {
+    "schools": [{
+        "name": "PUC",
+        "location": "Rio de Janeiro`",
+        "degree": "Pós Graduação",
+        "major": ["Análise de Sistemas", "Banco de Dados", "Programação", "Projeto de Sistemas"],
+        "dates": "2013 - 2015",
+        "url": "http://www.puc.br"
+    }, {
+        "name": "PUC",
+        "location": "Rio de Janeiro`",
+        "degree": "Graduação",
+        "major": ["Desenho Industrial", "Design Gráfico", "Design de Produto"],
+        "dates": "2005 - 2009",
+        "url": "http://www.puc.br"
+    }],
+
+    "onlineCourses": [{
+        "title": "Nanodegree Front-end",
+        "school": "Udacity",
+        "dates": "2015 - 2016",
+        "url": "http://www.udacity.com",
+    }]
+};
+
 var work = {
     "jobs": [{
         "employer": "ATSNET",
         "title": "Web Designer",
         "location": "Rio de Janeiro",
-        "dates": "01/2016 - 12/2016",
+        "dates": "01/2016 - Atual",
         "description": "Trabalho com web"
 
     }, {
@@ -23,53 +65,13 @@ var projects = {
     "projects": [{
         "title": "Portal JUCERJA",
         "dates": "01/2016 - 12/2016",
-        "description": "khkhhjhhjhj",
-        "images": ["https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/3/000/100/358/19e5526.jpg", "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/3/000/100/358/19e5526.jpg", "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/3/000/100/358/19e5526.jpg"]
+        "description": "Fusce tempor leo quis odio semper tempor. Morbi viverra nisl sed massa euismod, sed consequat odio aliquet. Nulla pellentesque odio egestas iaculis pretium. Suspendisse lacinia posuere metus, sed pulvinar elit gravida sed. Aliquam ultrices.",
+        "images": ["http://placehold.it/350x150", "http://placehold.it/350x150", "http://placehold.it/350x150", "http://placehold.it/350x150"]
     }, {
         "title": "Ingresso",
         "dates": "09/2013 - 12/2015",
-        "description": "kjkjkjkjkjkj",
-        "images": ["https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/3/000/100/358/19e5526.jpg", "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/3/000/100/358/19e5526.jpg", "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/3/000/100/358/19e5526.jpg"]
-    }]
-};
-
-var bio = {
-    "name": "Aline Vianna",
-    "role": "Web Developer",
-    "pictureUrl": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/3/000/100/358/19e5526.jpg",
-    "contacts": {
-        "generic": "ACDC",
-        "email": "acdc@gmail.com",
-        "mobile": "0999-0999",
-        "twitter": "aghi-la",
-        "github": "aghi-la",
-        "blog": "http://wwww.google.com",
-        "location": "Nashville, TN"
-    },
-    "skills": ["css", "html", "javascript"],
-    "welcomeMessage": "Hello, how are you? I'm Aline Vianna, and nice to meet you"
-};
-
-var education = {
-    "schools": [{
-        "name": "PUC",
-        "location": "Rio de Janeiro`",
-        "degree": "Pós Graduação",
-        "major": ["Análise de Sistemas", "Banco de Dados", "Programação", "Projeto de Sistemas"],
-        "years": "2013 - 2015"
-    }, {
-        "name": "PUC",
-        "location": "Rio de Janeiro`",
-        "degree": "Graduação",
-        "major": ["Desenho Industrial", "Design Gráfico", "Design de Produto"],
-        "years": "2005 - 2009"
-    }],
-
-    "onlineCourses": [{
-        "name": "Udacity",
-        "school": "Rio de Janeiro`",
-        "dates": "2015 - 2016",
-        "url": "http://www.udacity.com",
+        "description": "Fusce tempor leo quis odio semper tempor. Morbi viverra nisl sed massa euismod, sed consequat odio aliquet. Nulla pellentesque odio egestas iaculis pretium. Suspendisse lacinia posuere metus, sed pulvinar elit gravida sed. Aliquam ultrices.",
+        "images": ["http://placehold.it/350x150", "http://placehold.it/350x150", "http://placehold.it/350x150", "http://placehold.it/350x150"]
     }]
 };
 
@@ -77,10 +79,10 @@ var education = {
 bio.display = function() {
     var name = HTMLheaderName.replace("%data%", bio.name);
     var ocupation = HTMLheaderRole.replace("%data%", bio.role);
-    var picture = HTMLbioPic.replace("%data%", bio.pictureUrl);
-    $("#header").prepend(ocupation).prepend(name).prepend(picture);
+    var picture = HTMLbioPic.replace("%data%", bio.biopic);
+    $("#header").prepend(ocupation).prepend(name).append(picture);
 
-    var contactGeneric = HTMLcontactGeneric.replace("%contact%","contact: ").replace("%data%", bio.contacts.generic);
+    var contactGeneric = HTMLcontactGeneric.replace("%contact%", "contact: ").replace("%data%", bio.contacts.generic);
     var contactEmail = HTMLemail.replace("%data%", bio.contacts.email);
     var contactMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     var contactTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
@@ -88,7 +90,7 @@ bio.display = function() {
     var contactBlog = HTMLblog.replace("%data%", bio.contacts.blog);
     var contactLocation = HTMLlocation.replace("%data%", bio.contacts.location);
     $("#topContacts").append(contactGeneric).append(contactEmail).append(contactMobile).append(contactTwitter).append(contactGithub).append(contactBlog).append(contactLocation);
-
+    $("#footerContacts").append(contactGeneric).append(contactEmail).append(contactMobile).append(contactTwitter).append(contactGithub).append(contactBlog).append(contactLocation);
     if (bio.skills.length > 0) {
         $("#header").append(HTMLskillsStart);
         bio.skills.forEach(function(skill) {
@@ -98,6 +100,38 @@ bio.display = function() {
     }
 };
 bio.display();
+
+education.display = function() {
+    education.schools.forEach(function(school) {
+        $("#education").append(HTMLschoolStart);
+        var scholNameDegree = HTMLschoolName.replace("%data%", school.name) + HTMLschoolDegree.replace("%data%", school.degree);
+        var schoolCity = HTMLschoolLocation.replace("%data%", school.location);
+        var schoolYears = HTMLschoolDates.replace("%data%", school.dates);
+        var schoolUrl = HTMLschoolUrl.replace("%data%", school.url);
+
+        $(".education-entry:last").append(scholNameDegree).append(schoolCity).append(schoolYears).append(schoolUrl);
+
+        if (school.major.length > 0) {
+            school.major.forEach(function(maior) {
+                var schoolMajor = HTMLschoolMajor.replace("%data%", maior);
+                $(".education-entry:last").append(schoolMajor)
+            });
+        }
+    });
+
+    if (education.onlineCourses.length > 0) {
+        $("#education").append(HTMLonlineClasses);
+        education.onlineCourses.forEach(function(onlineCourse) {
+            $("#education").append(HTMLschoolStart);
+            var onlineTitleSchool = HTMLonlineTitle.replace("%data%", onlineCourse.title) + HTMLonlineSchool.replace("%data%", onlineCourse.school);
+            var onlineDates = HTMLonlineDates.replace("%data%", onlineCourse.dates);
+            var onlineURL = HTMLonlineURL.replace("%data%", onlineCourse.url);
+            $(".education-entry:last").append(onlineTitleSchool).append(onlineDates).append(onlineURL);
+        })
+    }
+};
+
+education.display();
 
 work.display = function() {
     work.jobs.forEach(function(job) {
@@ -114,7 +148,7 @@ work.display = function() {
 };
 work.display();
 
-$("#main").append(internationalizeButton);
+$("#main").prepend(internationalizeButton);
 
 function inName() {
     var nome = bio.name;
@@ -144,43 +178,6 @@ projects.display = function() {
 };
 projects.display();
 
-education.display = function(){
-  education.schools.forEach(function(school){
-      $("#education").append(HTMLschoolStart);
-      var schoolName = HTMLschoolName.replace("%data%",school.name);
-      var schoolCity = HTMLschoolLocation.replace("%data%",school.location);
-      var schoolDegree = HTMLschoolDegree.replace("%data%",school.degree);
-      var schoolYears = HTMLschoolDates.replace("%data%",school.years);
 
-      $(".education-entry:last").append(schoolName).append(schoolCity).append(schoolDegree).append(schoolYears);
-
-      if(school.major.length > 0){
-          school.major.forEach(function(maior){
-            var schoolMajor = HTMLschoolMajor.replace("%data%",maior);
-            $(".education-entry:last").append(schoolMajor)
-          });
-      }
-
-  });
-
-
-  if(education.onlineCourses.length > 0){
-      education.onlineCourses.forEach(function(onlineCourse){
-        $("#education").append(HTMLschoolStart);
-        var onlineTitle = HTMLonlineTitle.replace("%data%",onlineCourse.name);
-        var onlineSchool = HTMLonlineSchool.replace("%data%",onlineCourse.school);
-        var onlineDates = HTMLonlineDates.replace("%data%",onlineCourse.dates);
-        var onlineURL = HTMLonlineURL.replace("%data%",onlineCourse.url);
-
-        // $("#education").append(HTMLonlineClasses);
-
-        $(".education-entry:last").append(HTMLonlineClasses).append(onlineTitle).append(onlineSchool).append(onlineDates).append(onlineURL);
-
-
-      })
-  }
-};
-
-education.display();
 
 $("#mapDiv").append(googleMap);
